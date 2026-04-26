@@ -1,7 +1,8 @@
-public class Association {
+public class Association implements Comparable<Association> {
     private String palabraIngles;
     private String palabraEspaniol;
-    public void Association(String ingles, String espaniol){
+
+    public Association(String ingles, String espaniol){
         this.palabraIngles = ingles;
         this.palabraEspaniol = espaniol;
     }
@@ -17,6 +18,7 @@ public class Association {
     public String getPalabraEspaniol(){
         return this.palabraEspaniol;
     }
+    @Override
     public int compareTo(Association otraIngles){
         // 0 : this.palabraIngles == otraIngles
         // 0 > : this.palabraIngles < otraIngles (negativo)
