@@ -6,7 +6,7 @@ import java.util.Vector;
  * Reads data in target file
  * @throws IllegalArgumentException when the document was unreachable
  */
-public class FileReader {
+public class FileReaderUtil {
     public Vector<String> ReadFile(String target) {
         File myObj = new File(target);
         Vector<String> ans = new Vector<>();
