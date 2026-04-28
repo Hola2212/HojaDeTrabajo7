@@ -31,10 +31,10 @@ public class Arbol<T extends Comparable<T>>{
         return inOrder(this.arbolito).strip().replaceAll(" ", ", ") + ".";
     }
     public String SortedArbolPreOrder(){
-        return inOrder(this.arbolito).strip().replaceAll(" ", ", ") + ".";
+        return preOrder(this.arbolito).strip().replaceAll(" ", ", ") + ".";
     }
     public String SortedArbolPostOrder(){
-        return inOrder(this.arbolito).strip().replaceAll(" ", ", ") + ".";
+        return postOrder(this.arbolito).strip().replaceAll(" ", ", ") + ".";
     }
     public String inOrder(Node<T> dataPoint){
         if (dataPoint == null) { return ""; }
@@ -42,11 +42,11 @@ public class Arbol<T extends Comparable<T>>{
     }
     public String preOrder(Node<T> dataPoint){
         if (dataPoint == null) { return ""; }
-        return dataPoint.getData() + " " + inOrder(dataPoint.getLeft()) + inOrder(dataPoint.getRight());
+        return dataPoint.getData() + " " + preOrder(dataPoint.getLeft()) + preOrder(dataPoint.getRight());
     }
     public String postOrder(Node<T> dataPoint){
         if (dataPoint == null) { return ""; }
-        return inOrder(dataPoint.getLeft()) + inOrder(dataPoint.getRight()) + dataPoint.getData() + " ";
+        return postOrder(dataPoint.getLeft()) + postOrder(dataPoint.getRight()) + dataPoint.getData() + " ";
     }
 
     public T search(T data) {
